@@ -17,6 +17,12 @@ Create under the container `data` a new folder `data`
 
 Secondly, download the [complaints.csv](https://files.consumerfinance.gov/ccdb/complaints.csv.zip) unzip the folder and upload the file to the same data folder on your ADLS storage account.
 
+**Note**: Before uploading the complaints.csv file, add the CORS rule to the ADLS RG. 
+Allowed origins: *
+Allowed method: Select All
+Allowed header: 0.0.0.0
+Exposed headers: 255.255.255.255
+
 ## Step 3. Add the Cosmos DB as linked service
 In this step you're going to add the Cosmos DB as a linked service in the Synapse Workspace.
 1. Launch the Synapse workspace (via Azure portal > Synapse workspace > Workspace web URL) 

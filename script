@@ -1,0 +1,29 @@
+df_complaints = spark.read.format("csv").load(f"abfss://{file_system_name}@{data_lake_account_name}.dfs.core.windows.net/data/complaints.csv",header=True,escape ='"',multiLine=True)
+
+df_complaints = df_complaints.withColumnRenamed("Sub-product", "subproduct")\
+
+                            .withColumnRenamed("Sub-issue", "subissue")
+
+df_complaints = df_complaints.withColumnRenamed("Date received", "datereceived")
+
+df_complaints = df_complaints.withColumnRenamed("Consumer complaint narrative", "consumercomplaintnarrative")
+
+df_complaints = df_complaints.withColumnRenamed("Company public response", "companypublicresponse")
+
+df_complaints = df_complaints.withColumnRenamed("ZIP code", "zipcode")
+
+df_complaints = df_complaints.withColumnRenamed("Consumer consent provided?", "consumerconsentprovided?")
+
+df_complaints = df_complaints.withColumnRenamed("Submitted via", "submittedvia")
+
+df_complaints = df_complaints.withColumnRenamed("Date sent to company", "datesenttocompany")
+
+df_complaints = df_complaints.withColumnRenamed("Company response to consumer", "companyresponsetoconsumer")
+
+df_complaints = df_complaints.withColumnRenamed("Timely response?", "timelyresponse?")
+
+df_complaints = df_complaints.withColumnRenamed("Consumer disputed?", "consumerdisputed?")
+
+df_complaints = df_complaints.withColumnRenamed("Complaint ID", "complaintid")
+
+df_complaints.write.mode("overwrite").saveAsTable("default.complaints_data")

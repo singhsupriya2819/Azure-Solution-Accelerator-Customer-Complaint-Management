@@ -54,6 +54,11 @@ In order to perform the necessary actions in Synapse workspace, you will need to
 3. Search for and select `Storage Blob Data Contributor`. Click `Next` at the bottom of the screen. 
 4. Click `+ Select members` and seach for and select your username/email. Click `Select`. 
 5. Click `Review + assign` at the top of the page. Then click `Review + assign` at the bottom of the page.    
+  
+  Add networking rule to the synapse workspace-
+  Rule Name- AllowIP
+  Start IP- 0.0.0.0
+  End IP- 255.255.255.255
 
 ## Step 5. Upload and run Notebooks
 1. Launch the Synapse workspace (via Azure portal > Synapse workspace > Workspace web URL) 
